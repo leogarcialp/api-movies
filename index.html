@@ -9,7 +9,7 @@
    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-indigo-900">
+<body class="bg-indigo-900 text-white">
    <header class="bg-indigo-950">
       <div class="w-11/12 flex flex-col mx-auto">
          <div class="w-full flex justify-center items-center mt-5 text-white">
@@ -24,38 +24,72 @@
    </header>
 
    <main class="w-11/12 mx-auto">
-      <div class="flex justify-center items-center my-12">
-         <a class="p-1 border-2 border-red-400 bg-white" href="#"> < Previous</a>
-         <p class="mx-3 py-1 px-3 bg-white">1</p>
-         <a  class="p-1 border-2 border-red-400 bg-white" href="#">Next > </a>
+      <div class="flex justify-center items-center my-12 text-black">
+         <a class="p-1 bg-white" href="#"> < Prev</a>
+         <p class="mx-3 py-1 px-3 bg-red-400 text-white">1</p>
+         <a  class="p-1 bg-white" href="#">Next > </a>
       </div>
 
-      <div>
-         <img src="./assets/card-img.png" alt="movie or serie cover">
-         <div>
-            <p>John Wick: Chapter 4</p>
+      
+      <div class="grid grid-cols-2 gap-y-8 gap-x-3.5"> <!-- cards container-->
+         <div> 
             <div>
-               <p>2023 • 120m</p>
-               <span>Movie</span>
+               <img src="./assets/card-img.png" alt="movie or serie cover">
             </div>
-         </div>
-      </div>
-
-      <div>
-         <img src="./assets/card-img.png" alt="movie or serie cover">
-         <div>
-            <p>John Wick: Chapter 4</p>
             <div>
-               <p>2023 • 120m</p>
-               <span>Movie</span>
+               <p class="mt-1 mb-5 font-semibold text-sm">John Wick: Chapter 4</p>
+               <div class="flex justify-between">
+                  <p class="text-sm">2023 • 120m</p>
+                  <span class="px-0.5 border text-xs">Movie</span>
+               </div>
             </div>
-         </div>
+         </div> <!--card-->
+
+         <div> 
+            <div>
+               <img src="./assets/card-img.png" alt="movie or serie cover">
+            </div>
+            <div>
+               <p class="mt-1 mb-5 font-semibold text-sm">John Wick: Chapter 4</p>
+               <div class="flex justify-between">
+                  <p class="text-sm">2023 • 120m</p>
+                  <span class="px-0.5 border text-xs">Movie</span>
+               </div>
+            </div>
+         </div> <!--card-->
+
+         <div> 
+            <div>
+               <img src="./assets/card-img.png" alt="movie or serie cover">
+            </div>
+            <div>
+               <p class="mt-1 mb-5 font-semibold text-sm">John Wick: Chapter 4</p>
+               <div class="flex justify-between">
+                  <p class="text-sm">2023 • 120m</p>
+                  <span class="px-0.5 border text-xs">Movie</span>
+               </div>
+            </div>
+         </div> <!--card-->
+
+         <div> 
+            <div>
+               <img src="./assets/card-img.png" alt="movie or serie cover">
+            </div>
+            <div>
+               <p class="mt-1 mb-5 font-semibold text-sm">John Wick: Chapter 4</p>
+               <div class="flex justify-between">
+                  <p class="text-sm">2023 • 120m</p>
+                  <span class="px-0.5 border text-xs">Movie</span>
+               </div>
+            </div>
+         </div> <!--card-->
+
       </div>
 
-      <div class="flex justify-center items-center my-12">
-         <a class="p-1 border-2 border-red-400 bg-white" href="#"> < Previous</a>
-         <p class="mx-3 py-1 px-3 bg-white">1</p>
-         <a  class="p-1 border-2 border-red-400 bg-white" href="#">Next > </a>
+      <div class="flex justify-center items-center my-12 text-black">
+         <a class="p-1 bg-white" href="#"> < Prev</a>
+         <p class="mx-3 py-1 px-3 bg-red-400 text-white">1</p>
+         <a  class="p-1 bg-white" href="#">Next > </a>
       </div>
    </main>
 
