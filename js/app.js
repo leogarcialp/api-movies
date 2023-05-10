@@ -1,10 +1,7 @@
-const moviesContainer = document.querySelector('#container');
-
 const loadMovies = async () => {
    
    try {
-      const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=156a9d1b2c086e56ae5d4b2983e2b0f4')
-      console.log(response);
+      const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=156a9d1b2c086e56ae5d4b2983e2b0f4');
 
       // Check if the response is correct
       if(response.status === 200) {
@@ -13,15 +10,19 @@ const loadMovies = async () => {
          let movies = '';
 
          data.results.forEach(movie => {
+            // Get the release year
+            const releaseDate = movie.release_date;
+            const year = releaseDate.split('-')[0];
+
             movies+= `
-            <div> 
+            <div class="flex flex-col"> 
                <div>
-                  <img class="w-full" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie or serie cover">
+                  <img class="w-full h-full" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie or serie cover">
                </div>
-               <div class="text-sm md:text-base">
+               <div class="text-sm md:text-base flex-grow flex flex-col justify-between">
                   <p class="mt-1 mb-5 font-semibold">${movie.title}</p>
                   <div class="flex justify-between">
-                     <p class="">${movie.release_date}</p>
+                     <p class="">${year}</p>
                      <span class="px-0.5 border text-xs md:text-sm">Movie</span>
                   </div>
                </div>
@@ -30,6 +31,7 @@ const loadMovies = async () => {
          });
 
          // Place the movies in the HTML
+         const moviesContainer = document.querySelector('#container');
          moviesContainer.innerHTML = movies;
 
       } else if (response.status === 401) {
