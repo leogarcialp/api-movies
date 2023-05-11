@@ -1,7 +1,31 @@
+let page = 1;
+const btnPrev = document.querySelector('#btnPrev');
+const btnNext = document.querySelector('#btnNext');
+let pageCount = document.querySelector('#pageCount');
+
+
+// Add events for dynamic pagination
+btnNext.addEventListener('click', () => {
+   if(page < 1000) {
+      page+= 1;
+      loadMovies();
+      pageCount.textContent = page;
+   }
+});
+
+btnPrev.addEventListener('click', () => {
+   if(page > 1) {
+      page-= 1;
+      loadMovies();
+      pageCount.textContent = page;
+   }
+});
+
+
 const loadMovies = async () => {
    
    try {
-      const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=156a9d1b2c086e56ae5d4b2983e2b0f4');
+      const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=156a9d1b2c086e56ae5d4b2983e2b0f4&page=${page}`);
 
       // Check if the response is correct
       if(response.status === 200) {
