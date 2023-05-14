@@ -3,24 +3,49 @@ const btnPrev = document.querySelector('#btnPrev');
 const btnNext = document.querySelector('#btnNext');
 let pageCount = document.querySelector('#pageCount');
 
+const btnPrevBottom = document.querySelector('#btnPrevBottom'); 
+const btnNextBottom = document.querySelector('#btnNextBottom'); 
+let pageCountBottom = document.querySelector('#pageCountBottom');
+
+
+// Function to refresh content and both page counts
+function updatePagination() {
+   loadMovies();
+   pageCount.textContent = page;
+   pageCountBottom.textContent = page;
+};
 
 // Add events for dynamic pagination
 btnNext.addEventListener('click', () => {
    if(page < 1000) {
       page+= 1;
-      loadMovies();
-      pageCount.textContent = page;
+      updatePagination();
    }
 });
 
 btnPrev.addEventListener('click', () => {
    if(page > 1) {
       page-= 1;
-      loadMovies();
-      pageCount.textContent = page;
+      updatePagination();
    }
 });
 
+// bottom dynamic pagination
+btnNextBottom.addEventListener('click', () => {
+   if(page < 1000) {
+      page += 1;
+      updatePagination();
+   }
+});
+
+btnPrevBottom.addEventListener('click', () => {
+   if(page > 1) {
+      page -= 1;
+      updatePagination();
+   }
+});
+
+// TODO: simplify code if possible ↑
 
 const loadMovies = async () => {
    
